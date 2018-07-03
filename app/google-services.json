@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "715171895099",
+    "firebase_url": "https://moma-sampler.firebaseio.com",
+    "project_id": "moma-sampler",
+    "storage_bucket": "moma-sampler.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715171895099:android:598a400866e0fa09",
+        "android_client_info": {
+          "package_name": "com.example.danico.momasampler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "715171895099-eu37snrlohh1lmahltb088m24makp1uh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.danico.momasampler",
+            "certificate_hash": "76f5ed332ab3a0a8c5e12b2eefaca948b4af6aa6"
+          }
+        },
+        {
+          "client_id": "715171895099-3tasba5ecttfgvp7ejrbfqm0cto4p434.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdiaQlG80mxmwpIS5GCyAiMkPS-fTMEC4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "715171895099-3tasba5ecttfgvp7ejrbfqm0cto4p434.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

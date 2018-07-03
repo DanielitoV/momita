@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/usuario"
+            android:icon="@drawable/ic_perm_identity_black_24dp"
+            android:title="@string/usuario" />
+        <item
+            android:id="@+id/mailUsuario"
+            android:icon="@drawable/ic_email_black_24dp"
+            android:title="mail" />
+
+
+
+    </group>
+
+    <item android:title="commuicate">
+        <menu>
+            <item
+                android:id="@+id/shareBoton"
+                android:icon="@drawable/ic_share_black_24dp"
+                android:title="Share" />
+
+            <item
+                android:id="@+id/shareWeb"
+                android:icon="@drawable/ic_bubble_chart_black_24dp"
+                android:title="Web" />
+
+            <item
+                android:id="@+id/logOut"
+                android:icon="@drawable/ic_blur_off_black_24dp"
+                android:title="LogOut" />
+
+            <item
+                android:id="@+id/revoke"
+                android:icon="@drawable/ic_new_releases_black_24dp"
+                android:title="revoke" />
+        </menu>
+    </item>
+
+</menu>
