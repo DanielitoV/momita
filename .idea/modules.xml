@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Digital House\Entregable MOMA\MOMA desde GITKRAKEN\momita\app\app.iml" filepath="D:\Digital House\Entregable MOMA\MOMA desde GITKRAKEN\momita\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/momita.iml" filepath="$PROJECT_DIR$/momita.iml" />
+      <module fileurl="file://D:\Digital House\Entregable MOMA\MOMA desde GITKRAKEN\momita\momita.iml" filepath="D:\Digital House\Entregable MOMA\MOMA desde GITKRAKEN\momita\momita.iml" />
     </modules>
   </component>
 </project>
