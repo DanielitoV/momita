@@ -207,7 +207,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        callbackManager.onActivityResult(requestCode, resultCode, data); //SOLO esta linea corresponde a FACEBOOK
+        callbackManager.onActivityResult(requestCode, resultCode, data); /***SOLO esta linea corresponde a FACEBOOK***/
         super.onActivityResult(requestCode, resultCode, data);
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
@@ -217,6 +217,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 // Google Sign In fue exitoso y se pudo autenticar con Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+                nombreUsuario.setText(account.getDisplayName());
+                mailUsuario.setText(account.getEmail());
+                idUsuario.setText(account.getId());
+
+                Glide.with(this).load(account.getPhotoUrl()).into(imagenUsuario);
             } else {
                 Toast.makeText(this, "La Autenticacion salio mal", Toast.LENGTH_SHORT).show();
             }

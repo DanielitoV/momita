@@ -6,9 +6,9 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/usuario"
-            android:icon="@drawable/ic_perm_identity_black_24dp"
-            android:title="@string/usuario" />
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home" />
         <item
             android:id="@+id/mailUsuario"
             android:icon="@drawable/ic_email_black_24dp"

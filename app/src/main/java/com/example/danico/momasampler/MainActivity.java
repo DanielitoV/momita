@@ -66,26 +66,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_drawer, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+
+     @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            // Inflate the menu; this adds items to the action bar if it is present.
+            getMenuInflater().inflate(R.menu.home, menu);
+            return true;
+                    //super.onCreateOptionsMenu(menu);
+        }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if(id==R.id.action_settings){
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem item) {
         //voy a hacer en esta parte lo del switch para que al hacer click en
         //cada uno de los items te lleve a su correspondiente actividad
         int id = item.getItemId();
         switch (id) {
-            case R.id.usuario:
+
+            case R.id.logOut:
                 Intent u = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(u);
                 break;

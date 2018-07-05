@@ -8,6 +8,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="not_close_session">No pude iniciar sesion pascualito</string>
     <string name="not_revoke">No se pudo revoca el acceso</string>
-    <string name="usuario">USUARIO</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="home">Home</string>
 
 </resources>
