@@ -42,7 +42,7 @@ import java.util.Arrays;
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     /***Atributos para Google***/
-   // private FirebaseAuth mAuth;
+    // private FirebaseAuth mAuth;
 
     //con esta variable global desp la voy a usar para autenticar google
     private GoogleApiClient googleApiClient;
@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
     //voy a crear una variable aca para evitar mantener un valor constante
-   // public static final int SIGN_IN_CODE = 9001;
+    // public static final int SIGN_IN_CODE = 9001;
 
 
     //datos del logIn
@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         /*** Para Google dentro del onCreate***/
 
 
-       // mAuth = FirebaseAuth.getInstance();
+        // mAuth = FirebaseAuth.getInstance();
 
         //datos del logIn
         imagenUsuario = findViewById(R.id.imagenUsuario);
@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser() !=null){
+                if (firebaseAuth.getCurrentUser() != null) {
                     //UNA VEZ QUE INICIA SESION PASA A LA OTRA ACTIVIDAD
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
@@ -126,7 +126,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
 
         //escuchador de cuenta de Google por si algo sale mal .. //Para Google Login - Sign Up
-        mGoogleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this , new GoogleApiClient.OnConnectionFailedListener() {
+        mGoogleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
             @Override
             public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
                 Toast.makeText(LoginActivity.this, "Parece que algo no salio bien", Toast.LENGTH_SHORT).show();
@@ -205,6 +205,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data); /***SOLO esta linea corresponde a FACEBOOK***/
@@ -334,8 +335,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         startActivity(intent);
     }*/
     /*** Para Google fuera del OnCreate***/
-
-
 
 
     /*** Para Facebook fuera del OnCreate***/
