@@ -89,9 +89,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         /*** Para Google dentro del onCreate***/
 
-
-        // mAuth = FirebaseAuth.getInstance();
-
         //datos del logIn
         imagenUsuario = findViewById(R.id.imagenUsuario);
         nombreUsuario = findViewById(R.id.nombreUsuario);

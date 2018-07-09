@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "715171895099-r3rodji1jk2knqugfs607buiktj9tfva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.danico.momasampler",
+            "certificate_hash": "3aed8d376576a1bca7ba82dcaa512adc49c2699d"
+          }
+        },
+        {
           "client_id": "715171895099-3tasba5ecttfgvp7ejrbfqm0cto4p434.apps.googleusercontent.com",
           "client_type": 3
         }

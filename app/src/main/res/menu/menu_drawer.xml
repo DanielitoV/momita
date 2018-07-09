@@ -36,9 +36,9 @@
                 android:title="LogOut" />
 
             <item
-                android:id="@+id/revoke"
+                android:id="@+id/salir"
                 android:icon="@drawable/ic_new_releases_black_24dp"
-                android:title="revoke" />
+                android:title="Salir" />
         </menu>
     </item>
 

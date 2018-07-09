@@ -6,13 +6,19 @@
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout"
     android:fitsSystemWindows="true"
-    tools:context="com.example.danico.momasampler.MainActivity"
-    tools:openDrawer="start">
+    tools:context="com.example.danico.momasampler.view.MainActivity"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonSalir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salir"/>
 
         <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
