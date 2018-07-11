@@ -7,20 +7,30 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.danico.momasampler.ContenedorGlobalDeObra;
 import com.example.danico.momasampler.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import static java.security.AccessController.getContext;
 
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterrecyclerObras.SeleccionadorDeObra {
+
+    /***Atributos***/
     private Button buttonSalir;
     private DrawerLayout drawer;
     NavigationView navigationView;
+
+    private AdapterrecyclerObras adapterrecyclerObras;
+    private CambioDeActivity cambioDeActivity;
 
 
     @Override
@@ -28,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //boton provisorio para salir
         buttonSalir = findViewById(R.id.buttonSalir);
         buttonSalir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,18 +48,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+
         //Para el toolBar
         Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
 
+        //conecto el drawer con su layout
         drawer = findViewById(R.id.drawerLayout);
 
+        //le meto la accion al drawer para q se abra
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // voy a conectar el adapter con el layout
+        RecyclerView recyclerViewObras = findViewById(R.id.recyclerMain);
+
+        //creo el adapter del recycler y le paso de obras a la par de la interfaz
+        // para pasar los datos del onClick
+        adapterrecyclerObras = new AdapterrecyclerObras(this);
+        recyclerViewObras.setAdapter(adapterrecyclerObras);
+
+        //Voy a crear el layout manager del rcycler
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
+        recyclerViewObras.setLayoutManager(layoutManager);
 
     }
 
@@ -102,5 +128,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerLayout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void seleccionaronEstaObra(Integer posicion) {
+        cambioDeActivity.pasarAOtraActivity(posicion);
+    }
+
+    //interfaz para cambiar de Activity
+    public interface CambioDeActivity{
+        void pasarAOtraActivity(Integer posicionObra);
     }
 }

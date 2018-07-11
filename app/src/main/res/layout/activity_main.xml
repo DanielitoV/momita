@@ -29,10 +29,13 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:elevation="4dp"/>
 
-        <FrameLayout
-            android:id="@+id/contenedorFragment"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerMain"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark">
+
+        </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
 
