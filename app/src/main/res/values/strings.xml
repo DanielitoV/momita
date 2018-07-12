@@ -4,6 +4,7 @@
     <string name="facebook_app_id">144819146384591</string>
     <string name="fb_login_protocol_scheme">fb144819146384591</string>
 
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="not_close_session">No pude iniciar sesion pascualito</string>
