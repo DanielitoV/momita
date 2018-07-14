@@ -15,9 +15,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.danico.momasampler.ContenedorGlobalDeObra;
 import com.example.danico.momasampler.R;
+import com.example.danico.momasampler.controller.Controller;
+import com.example.danico.momasampler.model.pojo.Obra;
+import com.example.danico.momasampler.utils.ResultListener;
 import com.google.firebase.auth.FirebaseAuth;
 
 import static java.security.AccessController.getContext;
@@ -28,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Button buttonSalir;
     private DrawerLayout drawer;
     NavigationView navigationView;
+
+    private Controller controller;
 
     private AdapterrecyclerObras adapterrecyclerObras;
     private CambioDeActivity cambioDeActivity;
@@ -75,6 +81,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Voy a crear el layout manager del rcycler
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerViewObras.setLayoutManager(layoutManager);
+
+        //voy a crear un controlador
+        controller = new Controller();
+        ResultListener<Obra>escuchadorDeLaVista = new ResultListener<Obra>() {
+            @Override
+            public void finish(Obra obra) {
+                //voy a imprimir una tostada con el resultado
+                Toast.makeText(MainActivity.this, obra.toString(), Toast.LENGTH_SHORT).show();
+            }
+        };
 
     }
 

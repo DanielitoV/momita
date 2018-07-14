@@ -26,4 +26,10 @@ public class Obra {
     public Integer getArtistID() {
         return artistID;
     }
+
+
+    @Override
+    public String toString() {
+        return "Obra{" + "id" + artistID + "Nombre" + name + '\'' + '}';
+    }
 }
