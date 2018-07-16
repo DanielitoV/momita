@@ -24,6 +24,8 @@ import com.example.danico.momasampler.model.pojo.Obra;
 import com.example.danico.momasampler.utils.ResultListener;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.List;
+
 import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterrecyclerObras.SeleccionadorDeObra {
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
 
+        /*** vista de algunas cosas de la pantalla principal  ***/
         //Para el toolBar
         Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
@@ -70,6 +73,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+        dispararRecyclerView();
+
+        cargarRecyclerConObras();
+
+
+
+    }
+
+
+
+    private void dispararRecyclerView() {
         // voy a conectar el adapter con el layout
         RecyclerView recyclerViewObras = findViewById(R.id.recyclerMain);
 
@@ -81,18 +96,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Voy a crear el layout manager del rcycler
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerViewObras.setLayoutManager(layoutManager);
+    }
 
+    private void cargarRecyclerConObras() {
         //voy a crear un controlador
         controller = new Controller();
-        ResultListener<Obra>escuchadorDeLaVista = new ResultListener<Obra>() {
+        controller.obtenerObra(new ResultListener<List<Obra>>() {
             @Override
-            public void finish(Obra obra) {
-                //voy a imprimir una tostada con el resultado
-                Toast.makeText(MainActivity.this, obra.toString(), Toast.LENGTH_SHORT).show();
+            public void finish(List<Obra> obras) {
+                adapterrecyclerObras.agregarObrasAlaLista(obras);
             }
-        };
+        });
 
     }
+
 
     @Override
     public void onBackPressed() {

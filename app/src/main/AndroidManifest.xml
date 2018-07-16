@@ -29,7 +29,8 @@
         <activity android:name=".view.PinturaConDetalleActivity" />
         <activity android:name=".view.RegisterActivity" />
         <activity android:name=".view.ResetPasswordActivity" />
-        <activity android:name=".view.CambioDePasswordActivity"></activity>
+        <activity android:name=".view.CambioDePasswordActivity" />
+        <activity android:name=".view.ObraConDetalleActivity"></activity>
     </application>
 
 </manifest>
